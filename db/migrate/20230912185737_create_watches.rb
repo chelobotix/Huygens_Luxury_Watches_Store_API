@@ -2,7 +2,6 @@ class CreateWatches < ActiveRecord::Migration[7.0]
   def change
     create_table :watches do |t|
       t.string :name, null: false, unique: true
-      t.string :brand, null: false
       t.integer :price, null: false
       t.string :video, null: false, unique: true
       t.string :reference, null: true

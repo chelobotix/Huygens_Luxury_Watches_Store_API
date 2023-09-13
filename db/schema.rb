@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_13_192703) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_brands_on_name", unique: true
   end
 
   create_table "genders", force: :cascade do |t|
@@ -31,7 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
 
   create_table "watches", force: :cascade do |t|
     t.string "name", null: false
-    t.string "brand", null: false
     t.integer "price", null: false
     t.string "video", null: false
     t.string "reference"
@@ -54,8 +54,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "gender_id", null: false
+    t.bigint "brand_id", null: false
+    t.index ["brand_id"], name: "index_watches_on_brand_id"
     t.index ["gender_id"], name: "index_watches_on_gender_id"
   end
 
+  add_foreign_key "watches", "brands"
   add_foreign_key "watches", "genders"
 end

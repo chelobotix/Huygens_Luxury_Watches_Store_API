@@ -63,9 +63,9 @@ module Api
         {
           id: watch.id,
           name: watch.name,
-          brand: watch.brand,
           price: watch.price,
           gender: watch.gender.sex,
+          brand: watch.brand.name,
           video: watch.video,
           reference: watch.reference,
           collection: watch.collection,
