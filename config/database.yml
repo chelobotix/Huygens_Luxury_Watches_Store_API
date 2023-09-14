@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: Huygens_Luxury_Watches_Store_Back_development
+  database: Watches_development
   username: postgres
   password: 1215ehc
 
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Huygens_Luxury_Watches_Store_Back_test
+  database: Watches_test
   username: postgres
   password: 1215ehc
 
@@ -87,6 +87,6 @@ test:
 #
 production:
   <<: *default
-  database: Huygens_Luxury_Watches_Store_Back_production
+  database: Watches_production
   username: Huygens_Luxury_Watches_Store_Back
   password: <%= ENV["HUYGENS_LUXURY_WATCHES_STORE_BACK_DATABASE_PASSWORD"] %>

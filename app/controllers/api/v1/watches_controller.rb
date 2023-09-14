@@ -81,7 +81,7 @@ module Api
           strapMaterial: watch.strapMaterial,
           strapColor: watch.strapColor,
           buckleType: watch.buckleType,
-          specialFeature: watch.specialFeature,
+          specialFeature: watch.specialFeatures,
           thumbnails: watch.thumbnails,
           images: watch.images
         }
