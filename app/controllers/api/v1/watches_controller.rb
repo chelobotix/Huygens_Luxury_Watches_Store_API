@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class WatchesController < ApplicationController
@@ -58,7 +56,7 @@ module Api
         params.require(:watch).permit(:name, :brand, :price, :video)
       end
 
-      # Json to return as details to user
+      # Json to return as details to watch
       def details_watch(watch)
         {
           id: watch.id,
