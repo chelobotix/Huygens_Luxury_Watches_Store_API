@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_13_192703) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.text "history"
     t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_brands_on_name", unique: true
   end
 
   create_table "genders", force: :cascade do |t|
@@ -31,31 +33,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_192141) do
 
   create_table "watches", force: :cascade do |t|
     t.string "name", null: false
-    t.string "brand", null: false
     t.integer "price", null: false
-    t.string "video", null: false
+    t.string "video"
     t.string "reference"
     t.string "collection"
-    t.string "caseSize"
-    t.string "caseMaterial"
     t.string "movement"
     t.string "caliber"
     t.string "powerReserve"
     t.date "dateAdded"
     t.string "dialColor"
     t.string "dialMaterial"
+    t.string "caseSize"
+    t.string "caseMaterial"
     t.string "caseBack"
     t.string "strapMaterial"
     t.string "strapColor"
     t.string "buckleType"
-    t.text "specialFeature", default: [], array: true
+    t.string "specialFeatures"
     t.text "thumbnails", default: [], array: true
     t.text "images", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "gender_id", null: false
+    t.bigint "brand_id", null: false
+    t.index ["brand_id"], name: "index_watches_on_brand_id"
     t.index ["gender_id"], name: "index_watches_on_gender_id"
   end
 
+  add_foreign_key "watches", "brands"
   add_foreign_key "watches", "genders"
 end
