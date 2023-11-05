@@ -1,14 +1,12 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class WatchesController < ApplicationController
       before_action :set_watch, only: %i[show update destroy]
+      before_action :set_watches, only: %i[index]
 
       # GET /api/v1/watches
       # GET /api/v1/watches.json
       def index
-        @watches = Watch.all
         details = @watches.map { |watch| details_watch(watch) }
 
         render(json: { status: 'success', watches: details })
@@ -46,6 +44,11 @@ module Api
         @watch.destroy
       end
 
+      # Return Genre
+      def genre
+        Rails.logger.debug(watches.genre_id)
+      end
+
       private
 
       # Use callbacks to share common setup or constraints between actions.
@@ -53,12 +56,16 @@ module Api
         @watch = Watch.find(params[:id])
       end
 
+      def set_watches
+        @watches = Watch.all
+      end
+
       # Only allow a list of trusted parameters through.
       def watch_params
         params.require(:watch).permit(:name, :brand, :price, :video)
       end
 
-      # Json to return as details to user
+      # Json to return as details to watch
       def details_watch(watch)
         {
           id: watch.id,
