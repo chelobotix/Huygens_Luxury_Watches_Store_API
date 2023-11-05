@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/bin/node /Users/marceloalarcon/Documents/Programming/Projects/Huygens_Luxury_Watches_Store_Back/.yarn/releases/yarn-1.22.19.cjs set version from sources
+
+PATH: 
+  /Users/marceloalarcon/.gem/ruby/3.2.2/bin:/Users/marceloalarcon/.rubies/ruby-3.2.2/lib/ruby/gems/3.2.0/bin:/Users/marceloalarcon/.rubies/ruby-3.2.2/bin:/Users/marceloalarcon/.rbenv/shims:/Users/marceloalarcon/.rbenv/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/marceloalarcon/.rvm/bin:/opt/homebrew/bin:/opt/homebrew/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.5.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: Release not found: from
+      at /Users/marceloalarcon/Documents/Programming/Projects/Huygens_Luxury_Watches_Store_Back/.yarn/releases/yarn-1.22.19.cjs:94385:17
+      at Generator.next (<anonymous>)
+      at step (/Users/marceloalarcon/Documents/Programming/Projects/Huygens_Luxury_Watches_Store_Back/.yarn/releases/yarn-1.22.19.cjs:310:30)
+      at /Users/marceloalarcon/Documents/Programming/Projects/Huygens_Luxury_Watches_Store_Back/.yarn/releases/yarn-1.22.19.cjs:321:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
