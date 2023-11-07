@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for huygens on 2023-11-03T17:59:52-04:00
+# fly.toml app configuration file generated for white-thunder-1040 on 2023-11-04T23:37:00-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "huygens"
+app = "white-thunder-1040"
 primary_region = "scl"
 console_command = "/rails/bin/rails console"
 
